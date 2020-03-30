@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        elementFormDefault="qualified">
+    <element name="planes">
+        <complexType>
+            <sequence>
+              <element name="Plane"
+                       type="xsi:Plane"
+                       maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+    <complexType name="Plane">
+        <sequence>
+            <element name="Model" type="string"/>
+            <element name="Origin" type="string"/>
+            <element name="Chars" type="xsi:Chars"/>
+        </sequence>
+        <attribute name="parameters" type="xsi:Parameters"></attribute>
+        <attribute name="price" type="integer"></attribute>
+    </complexType>
+    <complexType name="Chars">
+        <attribute name="type">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="passenger's"></enumeration>
+                    <enumeration value="freight"></enumeration>
+                    <enumeration value="fire"></enumeration>
+                    <enumeration value="agricultural"></enumeration>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="numberOfSeeds" type="positiveInteger"></attribute>
+        <attribute name="characteristics" type="xsi:Characteristics"></attribute>
+        <attribute name="radarAvailability" type="boolean"></attribute>
+    </complexType>
+    <complexType name="Characteristics">
+            <attribute name="carryingCapacity" type="positiveInteger"></attribute>
+            <attribute name="numberOfPassengers" type="positiveInteger"></attribute>
+    </complexType>
+    <complexType name="Parameters">
+        <attribute name="length" type="positiveInteger"></attribute>
+        <attribute name="width" type="positiveInteger"></attribute>
+        <attribute name="height" type="positiveInteger"></attribute>
+    </complexType>
+</schema>
+

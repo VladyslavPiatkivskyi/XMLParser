@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        targetNamespace="http://www.example.org/planes"
+        xmlns:xsi="http://www.example.org/planes"
         elementFormDefault="qualified">
     <element name="planes">
         <complexType>
             <sequence>
-              <element name="Plane"
-                       type="xsi:Plane"
-                       maxOccurs="unbounded" />
+                <element name="Plane"
+                         type="xsi:Plane"
+                         maxOccurs="unbounded"/>
             </sequence>
         </complexType>
     </element>
@@ -17,14 +17,20 @@
             <element name="Model" type="string"/>
             <element name="Origin" type="string"/>
             <element name="Chars" type="xsi:Chars"/>
+            <element name="Parameters" type="xsi:Parameters"/>
+            <element name="Price" type="double"/>
         </sequence>
-        <attribute name="parameters" type="xsi:Parameters"></attribute>
-        <attribute name="price" type="integer"></attribute>
     </complexType>
     <complexType name="Chars">
-        <attribute name="type">
+        <sequence>
+            <element name="numberOfSeedsForCrew" type="positiveInteger"/>
+            <element name="characteristics" type="xsi:Characteristics"/>
+            <element name="radarAvailability" type="boolean"/>
+        </sequence>
+        <attribute name="typeOfPlane">
             <simpleType>
                 <restriction base="string">
+                    <enumeration value="transport"></enumeration>
                     <enumeration value="passenger's"></enumeration>
                     <enumeration value="freight"></enumeration>
                     <enumeration value="fire"></enumeration>
@@ -32,18 +38,19 @@
                 </restriction>
             </simpleType>
         </attribute>
-        <attribute name="numberOfSeeds" type="positiveInteger"></attribute>
-        <attribute name="characteristics" type="xsi:Characteristics"></attribute>
-        <attribute name="radarAvailability" type="boolean"></attribute>
     </complexType>
     <complexType name="Characteristics">
-            <attribute name="carryingCapacity" type="positiveInteger"></attribute>
-            <attribute name="numberOfPassengers" type="positiveInteger"></attribute>
+        <sequence>
+            <element name="carryingCapacity" type="positiveInteger"/>
+            <element name="numberOfPassengers" type="integer"/>
+        </sequence>
     </complexType>
     <complexType name="Parameters">
-        <attribute name="length" type="positiveInteger"></attribute>
-        <attribute name="width" type="positiveInteger"></attribute>
-        <attribute name="height" type="positiveInteger"></attribute>
+        <sequence>
+            <element name="length" type="double"/>
+            <element name="width" type="double"/>
+            <element name="height" type="double"/>
+        </sequence>
     </complexType>
 </schema>
 

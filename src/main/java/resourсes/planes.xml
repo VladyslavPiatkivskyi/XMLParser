@@ -1,0 +1,60 @@
+<planes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.example.org/planes"
+          xsi:schemaLocation="http://www.example.org/planes planes.xsd">
+    <Plane>
+        <Model>AN-225</Model>
+        <Origin>Ukraine</Origin>
+        <Chars typeOfPlane="transport">
+            <numberOfSeedsForCrew>6</numberOfSeedsForCrew>
+            <characteristics>
+                <carryingCapacity>250000</carryingCapacity>
+                <numberOfPassengers>70</numberOfPassengers>
+            </characteristics>
+            <radarAvailability>true</radarAvailability>
+        </Chars>
+        <Parameters>
+            <length>84.0</length>
+            <width>94.8</width>
+            <height>18.1</height>
+        </Parameters>
+        <Price>300000</Price>
+    </Plane>
+
+    <Plane>
+        <Model>AN-148</Model>
+        <Origin>Ukraine</Origin>
+        <Chars typeOfPlane="passenger's">
+            <numberOfSeedsForCrew>5</numberOfSeedsForCrew>
+            <characteristics>
+                <carryingCapacity>42000</carryingCapacity>
+                <numberOfPassengers>85</numberOfPassengers>
+            </characteristics>
+            <radarAvailability>true</radarAvailability>
+        </Chars>
+        <Parameters>
+            <length>29.13</length>
+            <width>33.91</width>
+            <height>8.19</height>
+        </Parameters>
+        <Price>7400</Price>
+    </Plane>
+
+    <Plane>
+        <Model>AT-802</Model>
+        <Origin>USA</Origin>
+        <Chars typeOfPlane="agricultural">
+            <numberOfSeedsForCrew>1</numberOfSeedsForCrew>
+            <characteristics>
+                <carryingCapacity>7257</carryingCapacity>
+                <numberOfPassengers>0</numberOfPassengers>
+            </characteristics>
+            <radarAvailability>false</radarAvailability>
+        </Chars>
+        <Parameters>
+            <length>11.7</length>
+            <width>18.68</width>
+            <height>3.8</height>
+        </Parameters>
+        <Price>893.9</Price>
+    </Plane>
+</planes>
